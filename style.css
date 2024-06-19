@@ -5,3 +5,8 @@
 .attribution a {
   color: hsl(228, 45%, 44%);
 }
+
+body {
+  font-family: "Fraunces", serif;
+  font-family: "Montserrat", sans-serif;
+}
