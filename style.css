@@ -10,7 +10,6 @@
 }
 
 body {
-  font-family: "Fraunces", serif;
   font-family: "Montserrat", sans-serif;
   background-color: hsl(30, 38%, 92%);
 }
@@ -23,26 +22,108 @@ main {
   min-height: 100vh;
 }
 
+h1 {
+  font-weight: 500;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: hsla(228, 12%, 48%, 0.7);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: "Fraunces", serif;
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: hsl(228, 12%, 48%);
+  margin-bottom: 20px;
+}
+
+button {
+  background-color: hsl(158, 36%, 37%);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border-color: white;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+button p {
+  color: white;
+}
+
+button:focus {
+  background-color: hsl(159, 51%, 16%);
+}
+
 .main-component {
   display: flex;
   flex-direction: row;
   background-color: white;
-  width: 60%;
-  height: 50%;
+  width: 50%;
+  /* height: 50%; */
+  border-radius: 20px;
 }
 
 .image-component {
   width: 50%;
-  height: 100%;
 }
 
-.image-component img {
+.image-mobile {
+  display: none;
+}
+
+.image-computer {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  overflow: hidden;
+  display: block;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
 }
 
 .text-component {
   width: 50%;
+  margin: 30px;
+}
+
+.price-component {
+  display: flex;
+  align-items: center;
+}
+
+.price-component h2 {
+  color: hsl(158, 36%, 37%);
+}
+
+.price-component p {
+  text-decoration: line-through;
+  margin-left: 30px;
+  font-size: 12px;
+}
+
+.cart-component img {
+  width: 15px;
+  height: 15px;
+  margin-right: 10px;
+}
+
+.cart-component {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.cart-component p {
+  font-size: 14px;
 }
 
 .attribution {
@@ -51,4 +132,74 @@ main {
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+@media (max-width: 940px) {
+  .main-component {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 70%;
+
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .main-component {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .image-component {
+    width: 100%;
+    height: 400px;
+  }
+
+  .image-mobile {
+    border-bottom-left-radius: 0;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    height: 100%;
+    object-fit: cover;
+    overflow: hidden;
+    display: block;
+    width: 100%;
+  }
+
+  .image-computer {
+    display: none;
+  }
+
+  .text-component {
+    width: 100%;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 20px;
+  }
+
+  button {
+    width: 90%;
+  }
+
+  .attribution {
+    display: none;
+  }
+
+  h1 {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 285px) {
+  .price-component h2 {
+    font-size: 18px;
+  }
+
+  .price-component p {
+    font-size: 10px;
+  }
 }
